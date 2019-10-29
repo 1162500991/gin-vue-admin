@@ -1,13 +1,13 @@
 package dbModel
 
 import (
+	"QMPlusCommon/init/qmsql"
+	"QMPlusCommon/tools"
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
 	uuid "github.com/satori/go.uuid"
 	"main/controller/servers"
-	"main/init/qmsql"
 	"main/model/modelInterface"
-	"main/tools"
 )
 
 type User struct {

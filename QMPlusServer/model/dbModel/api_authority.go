@@ -1,8 +1,8 @@
 package dbModel
 
 import (
+	"QMPlusCommon/init/qmsql"
 	"github.com/jinzhu/gorm"
-	"main/init/qmsql"
 )
 
 type ApiAuthority struct {
@@ -26,11 +26,11 @@ func (a *ApiAuthority) SetAuthAndApi(authId string, apisid []uint) (err error) {
 }
 
 // 获取角色api关联关系
-func (a *ApiAuthority) GetAuthAndApi(authId string) (err error,apiIds []uint) {
+func (a *ApiAuthority) GetAuthAndApi(authId string) (err error, apiIds []uint) {
 	var apis []ApiAuthority
 	err = qmsql.DEFAULTDB.Where("authority_id = ?", authId).Find(&apis).Error
 	for _, v := range apis {
-		apiIds = append(apiIds,v.ApiId)
+		apiIds = append(apiIds, v.ApiId)
 	}
-	return nil,apiIds
+	return nil, apiIds
 }

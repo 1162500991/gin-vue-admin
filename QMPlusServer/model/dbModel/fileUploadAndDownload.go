@@ -1,9 +1,9 @@
 package dbModel
 
 import (
+	"QMPlusCommon/init/qmsql"
 	"github.com/jinzhu/gorm"
 	"main/controller/servers"
-	"main/init/qmsql"
 	"main/model/modelInterface"
 )
 

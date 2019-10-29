@@ -1,8 +1,8 @@
 package servers
 
 import (
+	"QMPlusCommon/init/qmsql"
 	"github.com/jinzhu/gorm"
-	"main/init/qmsql"
 	"main/model/modelInterface"
 )
 

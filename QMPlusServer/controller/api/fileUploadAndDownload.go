@@ -1,9 +1,9 @@
 package api
 
 import (
+	"QMPlusCommon/controller/servers"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"main/controller/servers"
 	"main/model/dbModel"
 	"main/model/modelInterface"
 	"strings"

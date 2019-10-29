@@ -1,0 +1,42 @@
+basePath: /
+definitions:
+  dbModel.ExampleModule:
+    properties:
+      exampleName:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is a sample Server pets
+  license: {}
+  title: Swagger Example API
+  version: 0.0.1
+paths:
+  /exp/createExp:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 多服务模式示例
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/dbModel.ExampleModule'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"data":{},"msg":"获取成功"}'
+          schema:
+            type: string
+      summary: 创建基础api
+      tags:
+      - WebExample
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: x-token
+    type: apiKey
+swagger: "2.0"

@@ -1,10 +1,10 @@
 package api
 
 import (
+	"QMPlusCommon/controller/servers"
+	"QMPlusCommon/middleware"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"main/controller/servers"
-	"main/middleware"
 	"main/model/dbModel"
 	"main/model/modelInterface"
 )

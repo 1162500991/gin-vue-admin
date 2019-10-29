@@ -1,9 +1,9 @@
 package router
 
 import (
+	"QMPlusCommon/middleware"
 	"github.com/gin-gonic/gin"
 	"main/controller/api"
-	"main/middleware"
 )
 
 func InitFileUploadAndDownloadRouter(Router *gin.Engine) {

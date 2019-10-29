@@ -1,11 +1,11 @@
 package main
 
 import (
+	"QMPlusCommon/config"
+	"QMPlusCommon/init/qmlog"
+	"QMPlusCommon/init/qmsql"
 	"fmt"
-	"main/config"
 	"main/init/initRouter"
-	"main/init/qmlog"
-	"main/init/qmsql"
 	"main/init/registTable"
 	"net/http"
 	"time"
@@ -20,6 +20,7 @@ import (
 // @BasePath /
 func main() {
 	qmlog.InitLog()
+
 	registTable.RegistTable(qmsql.InitMysql(config.Dbconfig.Admin))
 	defer qmsql.DEFAULTDB.Close()
 	Router := initRouter.InitRouter()
@@ -32,16 +33,12 @@ func main() {
 		WriteTimeout:   10 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
-	time.Sleep(10*time.Microsecond)
+	time.Sleep(10 * time.Microsecond)
 	fmt.Printf(`欢迎使用 Gin-Vue-Admin
 作者：奇淼 And Spike666
 微信：shouzi_1994
 默认自动化文档地址:http://127.0.0.1%s/swagger/index.html
 默认前端文件运行地址:http://127.0.0.1:8080
-`,s.Addr)
+`, s.Addr)
 	_ = s.ListenAndServe()
-}
-
-func run(server *http.Server){
-
 }
